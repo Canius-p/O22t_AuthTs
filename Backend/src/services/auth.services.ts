@@ -5,10 +5,11 @@ import userModel from "../database/model/user.model";
 import verificationModel from "../database/model/verification.model";
 import { oneYearFromNow } from "../utils/date";
 import Jwt from "jsonwebtoken";
+import { Request } from "express";
 export type createAccountParamms = {
-  email: string;
-  password: string;
-  userAgent: string;
+  email?: string;
+  password?: string;
+  userAgent?: string;
 };
 
 export const createAccount = async (data: createAccountParamms) => {

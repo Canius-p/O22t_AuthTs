@@ -22,3 +22,13 @@ export const registerController = catchErrors(async (req, res, next) => {
   const { user, accessToken, refreshToken } = await registerUser(request);
   return setAuthCookies({ res, accessToken, refreshToken });
 });
+function registerUser(request: {
+  email: string;
+  password: string;
+  confirmPassword: string;
+  userAgent?: string | undefined;
+}):
+  | { user: any; accessToken: any; refreshToken: any }
+  | PromiseLike<{ user: any; accessToken: any; refreshToken: any }> {
+  throw new Error("Function not implemented.");
+}
