@@ -18,4 +18,7 @@ export const registerController = catchErrors(async (req, res, next) => {
     ...req.body,
     userAgent: req.headers["user-agent"],
   });
+
+  const { user, accessToken, refreshToken } = await registerUser(request);
+  return setAuthCookies({ res, accessToken, refreshToken });
 });
